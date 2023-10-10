@@ -1,5 +1,6 @@
 package entity;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -9,10 +10,13 @@ public class Employee {
     @Id
     @GeneratedValue
     private Long id;
-    private String fName;
-    private String lname;
+    @Column(name = "FNAME")
+    private String firstName;
+    @Column(name = "LNAME")
+    private String lastName;
 
-    public Employee(){}
+    public Employee() {
+    }
 
     public void setId(Long id) {
         this.id = id;
@@ -22,19 +26,19 @@ public class Employee {
         return id;
     }
 
-    public String getfName() {
-        return fName;
+    public String getfFirstName() {
+        return firstName;
     }
 
-    public void setfName(String fName) {
-        this.fName = fName;
+    public void setfFirstName(String fName) {
+        this.firstName = fName;
     }
 
-    public String getLname() {
-        return lname;
+    public String getlLastName() {
+        return lastName;
     }
 
-    public void setLname(String lname) {
-        this.lname = lname;
+    public void setlLastName(String lName) {
+        this.lastName = lName;
     }
 }
